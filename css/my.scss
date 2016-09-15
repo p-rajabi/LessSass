@@ -1,0 +1,118 @@
+﻿@import "mixins";
+@import "colors";
+$baseFontSize:14px;
+$baseClassName:"col";
+
+.#{$baseClassName}1{
+  font-size:$baseFontSize;
+}
+.#{$baseClassName}2{
+  color:$mainColor;
+}
+
+$app-size:1024;
+@function center-width($a){
+            @return $app-size - ($a*2);
+        }
+
+
+@for $colNumber from 1 through 5{
+    .col-#{$colNumber}{ 
+            width:($app-size / $colNumber)-10px;
+           
+        }
+}
+
+html {
+    font-family:'Open Sans',Verdana,sans-serif;
+    font-size:14px;
+}
+body {
+    background:lighten($mainColor,50%);
+    
+}
+h1 {
+    font-size:12px;
+}
+h2 {
+    font-size:20px;
+    font-weight:bold;
+}
+h3 {
+    font-size:16px;
+}
+h4 {
+    font-size:18px;
+}
+h5 {
+    font-size:20px;
+}
+h6 {
+    font-size:22px;
+}
+#container {
+    margin:{
+            top:30px;
+            left:auto;
+            right:auto;   
+            }    
+
+    background:$containerColor;
+    padding:5px;
+    width:center-width(100px);
+    @include rounded-corners(10px);
+}
+header h1 {
+    font:{
+            size:14px;
+            family:cursive;
+           }
+      color:blue;
+}
+ nav { 
+    font-size:8px;
+    font-weight:bold;
+    float:right;
+   ul{
+     list-style-type:none;
+   li{
+       float:left;
+        display:inline-block;
+        &:hover{
+                    text-decoration:none;
+                    
+                }        
+     }
+     }
+}
+#contact-us{
+  border:1px solid $mainColor;
+    @include rounded-corners(5px);
+    padding:10px;
+    width:500px;
+    float:initial;
+    color:$mainColor;
+     input[type=text]{
+        background-color:lightyellow;
+}
+    margin:{
+            left:auto;
+            right:auto;
+            }
+    
+}
+footer{ 
+    span{
+            font-size:12px;
+             
+        }
+    text-align:center;
+   
+nav{
+    
+display:inline-block;
+font-size:12px;
+float:none;
+//margin-top:5px;
+}
+}
